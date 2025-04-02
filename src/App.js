@@ -1,12 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import { GlobalStyle, Container } from "./styles/GlobalStyles";
-import { AnimatePresence } from "framer-motion"; // Para transições
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   return (
