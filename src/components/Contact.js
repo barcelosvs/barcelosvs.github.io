@@ -1,37 +1,57 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 
 const Section = styled(motion.section)`
   padding: 4rem 0;
   text-align: center;
+  background: linear-gradient(135deg, #1a1a1a 0%, #121212 100%);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+  margin: 0 auto;
 `;
 
-const Form = styled(motion.form)`
+const Title = styled.h1`
+  font-size: 2.5rem;
+  color: #ffffff;
+`;
+
+const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 400px;
-  margin: 0 auto;
-  input,
-  textarea {
-    background: #1e1e1e;
-    border: 1px solid #333;
-    color: #e0e0e0;
-    padding: 0.5rem;
-    border-radius: 4px;
-  }
-  button {
-    background: rgb(4, 124, 148);
-    color: #fff;
-    border: none;
-    padding: 0.75rem;
-    border-radius: 4px;
-    cursor: pointer;
-    &:hover {
-      background: rgb(0, 86, 105);
-    }
+  max-width: 500px;
+  margin: 2rem auto;
+`;
+
+const Input = styled.input`
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #00b4d8;
+  background: #1e1e1e;
+  color: #e0e0e0;
+`;
+
+const Textarea = styled.textarea`
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #00b4d8;
+  background: #1e1e1e;
+  color: #e0e0e0;
+  resize: vertical;
+`;
+
+const Button = styled.button`
+  padding: 0.75rem;
+  background: #00b4d8;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  &:hover {
+    background: #0096b7;
   }
 `;
 
@@ -47,9 +67,31 @@ const pageTransition = {
 };
 
 const Contact = () => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        "form-name": "contact",
+        ...formData,
+      }).toString(),
+    })
+      .then(() => {
+        alert("Mensagem enviada com sucesso!");
+        setFormData({ name: "", email: "", message: "" }); // Limpa o formulário
+      })
+      .catch((error) => alert("Erro ao enviar: " + error));
   };
 
   return (
@@ -60,25 +102,45 @@ const Contact = () => {
       exit="exit"
       transition={pageTransition}
     >
-      <h2>Contato</h2>
+      <Title>Entre em Contato</Title>
       <Form
-        action="https://formspree.io/f/mjkyakop"
+        name="contact"
         method="POST"
-        onSubmit={handleSubmit(onSubmit)}
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
       >
-        <input {...register("nome")} placeholder="Seu Nome" required />
-        <input
-          {...register("email")}
+        <input type="hidden" name="form-name" value="contact" />
+        <p hidden>
+          <label>
+            Não preencha isso se for humano: <input name="bot-field" />
+          </label>
+        </p>
+        <Input
+          type="text"
+          name="name"
+          placeholder="Seu Nome"
+          value={formData.name}
+          onChange={handleChange}
+          required
+        />
+        <Input
           type="email"
-          placeholder="Seu Email"
+          name="email"
+          placeholder="Seu E-mail"
+          value={formData.email}
+          onChange={handleChange}
           required
         />
-        <textarea
-          {...register("mensagem")}
+        <Textarea
+          name="message"
           placeholder="Sua Mensagem"
+          value={formData.message}
+          onChange={handleChange}
+          rows="5"
           required
         />
-        <button type="submit">Enviar</button>
+        <Button type="submit">Enviar Mensagem</Button>
       </Form>
     </Section>
   );
