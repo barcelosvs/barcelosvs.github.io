@@ -18,7 +18,7 @@ const Avatar = styled.img`
   height: 150px;
   border-radius: 50%;
   margin-bottom: 2rem;
-  border: 2px solid #00b4d8;
+  border: 2px solid #40345f;
 `;
 
 const Title = styled.h1`
@@ -29,7 +29,7 @@ const Title = styled.h1`
 
 const Subtitle = styled.h2`
   font-size: 1.5rem;
-  color: #00b4d8;
+  color: rgb(54, 31, 107);
   margin: 0.5rem 0 1rem;
   font-weight: 400;
 `;
@@ -92,12 +92,12 @@ const About = () => {
     >
       <Avatar src="/avatar.png" alt="Victor Barcelos" />
       <Title>Victor Barcelos Santos</Title>
-      <Subtitle>Software Engineer | Full-Stack</Subtitle>
+      <Subtitle>Software Engineer | Data Engineer</Subtitle>
       <Info>
-        Especializo-me em engenharia de dados, dashboards e soluções escaláveis
-        com Python, Azure e Power BI. Atualmente atuo na otimização e
-        automatização de processos e desenvolvimento de ferramentas para tomada
-        de decisões.
+        Entusiasta em tecnologia, Graduado em engenharia de Software, me
+        especializo em Engenharia de Dados trazendo, dashboards e soluções
+        escaláveis utilizando ferramentas como Python, DataBricks, SQL, Apache
+        Spark ,Azure e Power BI
       </Info>
       <SkillsList>
         <Skill>Python</Skill>
