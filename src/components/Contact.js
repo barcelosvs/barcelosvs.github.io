@@ -23,14 +23,14 @@ const Form = styled(motion.form)`
     border-radius: 4px;
   }
   button {
-    background: #00b4d8;
+    background: rgb(4, 124, 148);
     color: #fff;
     border: none;
     padding: 0.75rem;
     border-radius: 4px;
     cursor: pointer;
     &:hover {
-      background: #0096b7;
+      background: rgb(0, 86, 105);
     }
   }
 `;
