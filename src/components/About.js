@@ -59,14 +59,14 @@ const Skill = styled.span`
 const Button = styled(Link)`
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background: #00b4d8;
+  background: rgb(114, 98, 150);
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
   margin: 0.5rem;
   transition: background 0.3s ease;
   &:hover {
-    background: #0096b7;
+    background: rgb(114, 98, 150);
   }
 `;
 
@@ -92,14 +92,12 @@ const About = () => {
     >
       <Avatar src="/avatar.png" alt="Victor Barcelos" />
       <Title>Victor Barcelos Santos</Title>
-      <Subtitle>
-        Engenheiro de Software | Transformando Dados em Soluções
-      </Subtitle>
+      <Subtitle>Software Engineer | Full-Stack</Subtitle>
       <Info>
-        Apaixonado por tecnologia, especializo-me em engenharia de dados,
-        dashboards e soluções escaláveis com Python, Azure e Power BI.
-        Atualmente atuo na Xerox otimizando processos e desenvolvendo
-        ferramentas para tomada de decisão.
+        Especializo-me em engenharia de dados, dashboards e soluções escaláveis
+        com Python, Azure e Power BI. Atualmente atuo na otimização e
+        automatização de processos e desenvolvimento de ferramentas para tomada
+        de decisões.
       </Info>
       <SkillsList>
         <Skill>Python</Skill>
