@@ -18,7 +18,7 @@ const Avatar = styled.img`
   height: 150px;
   border-radius: 50%;
   margin-bottom: 2rem;
-  border: 2px solid #40345f;
+  border: 2px solid #621587;
 `;
 
 const Title = styled.h1`
@@ -29,7 +29,7 @@ const Title = styled.h1`
 
 const Subtitle = styled.h2`
   font-size: 1.5rem;
-  color: rgb(54, 31, 107);
+  color: #621587;
   margin: 0.5rem 0 1rem;
   font-weight: 400;
 `;
@@ -59,14 +59,14 @@ const Skill = styled.span`
 const Button = styled(Link)`
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background: rgb(114, 98, 150);
+  background: rgb(89, 70, 110);
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
   margin: 0.5rem;
   transition: background 0.3s ease;
   &:hover {
-    background: rgb(114, 98, 150);
+    background: rgb(89, 70, 110);
   }
 `;
 
@@ -97,7 +97,7 @@ const About = () => {
         Entusiasta em tecnologia, Graduado em engenharia de Software, me
         especializo em Engenharia de Dados trazendo, dashboards e soluções
         escaláveis utilizando ferramentas como Python, DataBricks, SQL, Apache
-        Spark ,Azure e Power BI
+        Spark, Azure e Power BI
       </Info>
       <SkillsList>
         <Skill>Python</Skill>
