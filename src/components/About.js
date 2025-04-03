@@ -66,7 +66,7 @@ const Button = styled(Link)`
   margin: 0.5rem;
   transition: background 0.3s ease;
   &:hover {
-    background: rgb(89, 70, 110);
+    background: rgb(55, 23, 88);
   }
 `;
 

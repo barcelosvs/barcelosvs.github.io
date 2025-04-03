@@ -28,7 +28,7 @@ const Form = styled.form`
 const Input = styled.input`
   padding: 0.75rem;
   border-radius: 4px;
-  border: 1px solid #00b4d8;
+  border: 1px solid #621587;
   background: #1e1e1e;
   color: #e0e0e0;
 `;
@@ -36,7 +36,7 @@ const Input = styled.input`
 const Textarea = styled.textarea`
   padding: 0.75rem;
   border-radius: 4px;
-  border: 1px solid #00b4d8;
+  border: 1px solid #621587;
   background: #1e1e1e;
   color: #e0e0e0;
   resize: vertical;
@@ -44,14 +44,14 @@ const Textarea = styled.textarea`
 
 const Button = styled.button`
   padding: 0.75rem;
-  background: #00b4d8;
+  background: rgb(89, 70, 110);
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background 0.3s ease;
   &:hover {
-    background: #0096b7;
+    background: rgb(55, 23, 88);
   }
 `;
 
@@ -89,7 +89,7 @@ const Contact = () => {
     })
       .then(() => {
         alert("Mensagem enviada com sucesso!");
-        setFormData({ name: "", email: "", message: "" }); // Limpa o formulário
+        setFormData({ name: "", email: "", message: "" });
       })
       .catch((error) => alert("Erro ao enviar: " + error));
   };
