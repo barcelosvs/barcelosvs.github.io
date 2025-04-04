@@ -35,7 +35,7 @@ const SkillCategory = styled.div`
 
 const CategoryTitle = styled.h3`
   font-size: 1.5rem;
-  color: #9370db; /* Roxo médio */
+  color: #9370db;
   margin-bottom: 1rem;
 `;
 
@@ -115,24 +115,24 @@ const skillsData = [
   {
     category: "Frontend",
     skills: [
-      { name: "React", icon: <FaReact />, progress: 90 },
+      { name: "React", icon: <FaReact />, progress: 80 },
       { name: "JavaScript", icon: <FaJs />, progress: 85 },
     ],
   },
   {
     category: "Backend",
-    skills: [{ name: "SQL", icon: <FaDatabase />, progress: 70 }],
+    skills: [{ name: "SQL", icon: <FaDatabase />, progress: 90 }],
   },
   {
     category: "Ferramentas",
     skills: [
-      { name: "Azure", icon: <FaCloud />, progress: 65 },
+      { name: "Azure", icon: <FaCloud />, progress: 75 },
       { name: "Git", icon: <FaGitAlt />, progress: 90 },
     ],
   },
   {
     category: "Linguagens",
-    skills: [{ name: "Python", icon: <FaPython />, progress: 75 }],
+    skills: [{ name: "Python", icon: <FaPython />, progress: 95 }],
   },
 ];
 
