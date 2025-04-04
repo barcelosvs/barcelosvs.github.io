@@ -37,13 +37,13 @@ const Skills = () => {
     >
       <h2>Habilidades</h2>
       <SkillList>
-        {["React", "JavaScript", "CSS", "Azure", "Python"].map(
+        {["React", "JavaScript", "Azure", "DataBricks", "Python"].map(
           (skill, index) => (
             <motion.li
               key={skill}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.2 }}
+              transition={{ delay: index * 0.4 }}
             >
               {skill}
             </motion.li>

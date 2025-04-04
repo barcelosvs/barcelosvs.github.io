@@ -6,7 +6,7 @@ const Nav = styled.nav`
   position: fixed;
   top: 0;
   width: 100%;
-  background: #1a1a1a;
+  background: rgb(39, 39, 39);
   padding: 1rem 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   z-index: 1000;
@@ -23,12 +23,12 @@ const NavList = styled.ul`
 
 const NavItem = styled.li`
   a {
-    color: #e0e0e0;
+    color: rgb(216, 216, 216);
     text-decoration: none;
     font-size: 1.2rem;
     transition: color 0.3s ease;
     &:hover {
-      color: #00b4d8;
+      color: #621587;
     }
   }
 `;

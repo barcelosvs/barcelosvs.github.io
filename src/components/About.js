@@ -97,13 +97,13 @@ const About = () => {
         Entusiasta em tecnologia, Graduado em engenharia de Software, me
         especializo em Engenharia de Dados trazendo, dashboards e soluções
         escaláveis utilizando ferramentas como Python, DataBricks, SQL, Apache
-        Spark, Azure e Power BI
+        Spark, Azure e Power BI.
       </Info>
       <SkillsList>
-        <Skill>Python</Skill>
-        <Skill>Azure</Skill>
-        <Skill>Power BI</Skill>
         <Skill>React</Skill>
+        <Skill>Azure</Skill>
+        <Skill>Python</Skill>
+        <Skill>AWS</Skill>
       </SkillsList>
       <Button to="/projects">Veja Meus Projetos</Button>
       <Button to="/contact">Entre em Contato</Button>
