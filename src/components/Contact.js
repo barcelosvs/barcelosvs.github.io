@@ -5,65 +5,82 @@ import styled from "styled-components";
 const Section = styled(motion.section)`
   padding: 4rem 0;
   text-align: center;
-  background: linear-gradient(135deg, #1a1a1a 0%, #121212 100%);
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  max-width: 800px;
-  margin: 0 auto;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  min-height: 100vh;
+  color: #e0e0e0;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Title = styled.h1`
   font-size: 2.5rem;
   color: #ffffff;
+  text-shadow: 0 2px 4px rgba(147, 112, 219, 0.3);
 `;
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   max-width: 500px;
   margin: 2rem auto;
 `;
 
-const Input = styled.input`
+const Input = styled(motion.input)`
   padding: 0.75rem;
-  border-radius: 4px;
-  border: 1px solid #621587;
-  background: #1e1e1e;
-  color: #e0e0e0;
+  border-radius: 8px;
+  border: 1px solid #9370db;
+  background: #2a2a40;
+  color: #d8bfd8;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(147, 112, 219, 0.1);
 `;
 
-const Textarea = styled.textarea`
+const Textarea = styled(motion.textarea)`
   padding: 0.75rem;
-  border-radius: 4px;
-  border: 1px solid #621587;
-  background: #1e1e1e;
-  color: #e0e0e0;
+  border-radius: 8px;
+  border: 1px solid #9370db;
+  background: #2a2a40;
+  color: #d8bfd8;
+  font-size: 1rem;
   resize: vertical;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(147, 112, 219, 0.1);
 `;
 
-const Button = styled.button`
+const Button = styled(motion.button)`
   padding: 0.75rem;
-  background: rgb(89, 70, 110);
+  background: linear-gradient(90deg, #8a2be2, #ba55d3);
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(147, 112, 219, 0.3);
   &:hover {
-    background: rgb(55, 23, 88);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(147, 112, 219, 0.5);
+    background: linear-gradient(90deg, #6a0dad, #9b30ff);
   }
 `;
 
 const pageVariants = {
-  initial: { opacity: 0, x: "-100vw" },
-  animate: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: "100vw" },
+  initial: { opacity: 0, y: 50 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -50 },
 };
 
 const pageTransition = {
-  type: "tween",
-  duration: 0.5,
+  type: "spring",
+  stiffness: 100,
+  damping: 20,
 };
 
 const Contact = () => {
@@ -101,6 +118,8 @@ const Contact = () => {
       animate="animate"
       exit="exit"
       transition={pageTransition}
+      role="region"
+      aria-label="Contato"
     >
       <Title>Entre em Contato</Title>
       <Form
@@ -113,7 +132,7 @@ const Contact = () => {
         <input type="hidden" name="form-name" value="contact" />
         <p hidden>
           <label>
-            Não preencha isso se for humano: <input name="bot-field" />
+            <input name="bot-field" />
           </label>
         </p>
         <Input
@@ -123,6 +142,9 @@ const Contact = () => {
           value={formData.name}
           onChange={handleChange}
           required
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1, type: "spring", stiffness: 120 }}
         />
         <Input
           type="email"
@@ -131,6 +153,9 @@ const Contact = () => {
           value={formData.email}
           onChange={handleChange}
           required
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
         />
         <Textarea
           name="message"
@@ -139,8 +164,18 @@ const Contact = () => {
           onChange={handleChange}
           rows="5"
           required
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, type: "spring", stiffness: 120 }}
         />
-        <Button type="submit">Enviar Mensagem</Button>
+        <Button
+          type="submit"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, type: "spring", stiffness: 120 }}
+        >
+          Enviar Mensagem
+        </Button>
       </Form>
     </Section>
   );
